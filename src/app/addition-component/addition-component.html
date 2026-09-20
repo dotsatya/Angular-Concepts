@@ -1,0 +1,59 @@
+<!-- <h1 class="text-3xl font-bold underline">Addition</h1>
+<input type="number" [(ngModel)]="num1" class="border-2" placeholder="num1"> 
+<input type="number" [(ngModel)]="num2" class="border-2" placeholder="num2"> 
+<button (click)="handleClick()" class=" bg-amber-200 ">Add</button>
+
+<p>result: {{ result ?? 'None' }}</p> -->
+
+<div class="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+  <div class="w-full max-w-md rounded-2xl bg-white p-8 shadow-xl">
+    <!-- Heading -->
+    <div class="mb-8 text-center">
+      <h1 class="text-3xl font-bold text-gray-800">Addition Calculator</h1>
+      <p class="mt-2 text-sm text-gray-500">Enter two numbers and calculate their sum</p>
+    </div>
+    <!-- Inputs -->
+    <div class="space-y-4">
+      <div>
+        <label class="mb-1 block text-sm font-medium text-gray-700"> First Number </label>
+        <input
+          #input1
+          type="number"
+          (input)="getNumber1($event)"
+          placeholder="Enter first number"
+          class="w-full rounded-lg border-2 border-gray-200 px-4 py-3 outline-none transition focus:border-amber-400 focus:ring-2 focus:ring-amber-100"
+        />
+      </div>
+      <div>
+        <label class="mb-1 block text-sm font-medium text-gray-700"> Second Number </label>
+        <input
+          #input2
+          type="number"
+          (input)="getNumber2($event)"
+          placeholder="Enter second number"
+          class="w-full rounded-lg border-2 border-gray-200 px-4 py-3 outline-none transition focus:border-amber-400 focus:ring-2 focus:ring-amber-100"
+        />
+      </div>
+    </div>
+    <!-- Button -->
+    <button
+      (click)="handleClick(input1, input2)"
+      class="mt-6 w-full rounded-lg bg-amber-400 px-6 py-3 font-semibold text-gray-900 transition hover:bg-amber-500 active:scale-[0.98]"
+    >
+      Add Numbers
+    </button>
+    <!-- Result -->
+    <div class="mt-6 rounded-xl bg-gray-100 p-5 text-center">
+      <p class="text-sm font-medium text-gray-500">Result</p>
+      <div class="mt-2 flex items-center justify-center gap-2">
+        @if (result !== null) {
+          <p class="mt-1 text-3xl font-bold text-gray-800">
+            {{ displayNum1 + ' + ' + displayNum2 + ' = ' + result }}
+          </p>
+        } @else {
+          <p class="mt-1 text-3xl font-bold text-gray-800">No calculation done yet ...</p>
+        }
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,121 @@
+<div class="min-h-screen bg-gray-100 px-4 py-10">
+  <div class="mx-auto w-full max-w-lg rounded-3xl bg-white p-8 text-center shadow-xl">
+    <!-- Header -->
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold text-gray-900">Color Selector</h1>
+      <p class="mt-2 text-gray-500">Select a color or enter one manually</p>
+    </div>
+    <!-- Color Buttons -->
+    <div class="mb-8">
+      <p class="mb-3 text-left text-sm font-semibold text-gray-700">Select a color</p>
+      <div class="grid grid-cols-3 gap-3">
+        <button
+          (click)="handleClick('red')"
+          class="rounded-xl bg-red-500 px-4 py-3 font-semibold text-white shadow-sm transition hover:bg-red-600 hover:shadow-md active:scale-95"
+        >
+          🔴 Red
+        </button>
+        <button
+          (click)="handleClick('green')"
+          class="rounded-xl bg-green-500 px-4 py-3 font-semibold text-white shadow-sm transition hover:bg-green-600 hover:shadow-md active:scale-95"
+        >
+          🟢 Green
+        </button>
+        <button
+          (click)="handleClick('blue')"
+          class="rounded-xl bg-blue-500 px-4 py-3 font-semibold text-white shadow-sm transition hover:bg-blue-600 hover:shadow-md active:scale-95"
+        >
+          🔵 Blue
+        </button>
+      </div>
+    </div>
+    <!-- Manual Input -->
+    <div class="mb-8">
+      <p class="mb-3 text-left text-sm font-semibold text-gray-700">Enter color manually</p>
+      <div class="flex gap-2">
+        <input
+          type="text"
+          (input)="handleInput($event)"
+          placeholder="Enter red, green or blue"
+          class="min-w-0 flex-1 rounded-xl border-2 border-gray-200 px-4 py-3 text-gray-700 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+        />
+        <button
+          (click)="changeColor()"
+          class="rounded-xl bg-gray-900 px-5 py-3 font-semibold text-white transition hover:bg-gray-700 active:scale-95"
+        >
+          Apply
+        </button>
+      </div>
+    </div>
+    <!-- Divider -->
+    <div class="mb-8 flex items-center gap-3">
+      <div class="h-px flex-1 bg-gray-200"></div>
+      <span class="text-xs font-medium uppercase tracking-wider text-gray-400"> Preview </span>
+      <div class="h-px flex-1 bg-gray-200"></div>
+    </div>
+    <!-- Color Preview -->
+    <!-- <div class="flex justify-center">
+      @if (val === 'red') {
+        <div
+          class="flex h-48 w-48 items-center justify-center rounded-3xl bg-red-500 text-2xl font-bold text-white shadow-lg transition"
+        >
+          Red
+        </div>
+      } @else if (val === 'green') {
+        <div
+          class="flex h-48 w-48 items-center justify-center rounded-3xl bg-green-500 text-2xl font-bold text-white shadow-lg transition"
+        >
+          Green
+        </div>
+      } @else if (val === 'blue') {
+        <div
+          class="flex h-48 w-48 items-center justify-center rounded-3xl bg-blue-500 text-2xl font-bold text-white shadow-lg transition"
+        >
+          Blue
+        </div>
+      } @else {
+        <div
+          class="flex h-48 w-48 items-center justify-center rounded-3xl border-2 border-dashed border-gray-300 bg-gray-50 text-lg font-semibold text-gray-400"
+        >
+          No Color
+        </div>
+      }
+    </div> -->
+    <div class="flex justify-center">
+      @switch (val) {
+        @case ('red') {
+          <div
+            class="flex h-48 w-48 items-center justify-center rounded-3xl bg-red-500 text-2xl font-bold text-white shadow-lg transition"
+          >
+            Red
+          </div>
+        }
+        @case ('green') {
+          <div
+            class="flex h-48 w-48 items-center justify-center rounded-3xl bg-green-500 text-2xl font-bold text-white shadow-lg transition"
+          >
+            Green
+          </div>
+        }
+        @case ('blue') {
+          <div
+            class="flex h-48 w-48 items-center justify-center rounded-3xl bg-blue-500 text-2xl font-bold text-white shadow-lg transition"
+          >
+            Blue
+          </div>
+        }
+        @default {
+          <div
+            class="flex h-48 w-48 items-center justify-center rounded-3xl border-2 border-dashed border-gray-300 bg-gray-50 text-lg font-semibold text-gray-400"
+          >
+            No Color
+          </div>
+        }
+      }
+    </div>
+    <!-- Current Value -->
+    <p class="mt-6 text-sm text-gray-500">
+      Current value: <span class="font-semibold text-gray-800"> {{ val || 'none' }} </span>
+    </p>
+  </div>
+</div>

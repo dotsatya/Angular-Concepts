@@ -1,0 +1,83 @@
+<div class="min-h-screen bg-gray-100 px-4 py-10">
+  <div class="mx-auto max-w-md rounded-3xl bg-white p-8 text-center shadow-xl">
+    <!-- Header -->
+    <h1 class="text-3xl font-bold text-gray-800">Signal Counter</h1>
+
+    <p class="mt-2 text-sm text-gray-500">Practice Angular Signals</p>
+
+    <!-- Values -->
+    <div class="mt-8 space-y-4">
+      <!-- Signal value -->
+      <div class="rounded-2xl bg-blue-50 p-5">
+        <p class="text-sm font-medium text-gray-500">Signal Value</p>
+
+        <p class="mt-2 text-5xl font-bold text-blue-600">
+          {{ cntSignal() }}
+        </p>
+      </div>
+
+      <!-- Normal value -->
+      <div class="rounded-2xl bg-gray-50 p-5">
+        <p class="text-sm font-medium text-gray-500">Normal Value (No Signal)</p>
+
+        <p class="mt-2 text-3xl font-bold text-gray-700">
+          {{ cntNormal }}
+        </p>
+      </div>
+    </div>
+
+    <!-- Set value -->
+    <div class="mt-8">
+      <button
+        (click)="cntSignal.set(107)"
+        class="w-full rounded-xl bg-amber-400 px-5 py-3 font-semibold text-gray-900 shadow-sm transition hover:bg-amber-500 active:scale-95"
+      >
+        Set Value to 107 (With Signal)
+      </button>
+    </div>
+
+    <!-- Increment / Decrement -->
+    <!-- <div class="mt-4 grid grid-cols-2 gap-3">
+
+      <button
+        (click)="cntSignal.update((v) => v + 1)"
+        class="rounded-xl bg-green-500 px-5 py-3 font-semibold text-white shadow-sm transition hover:bg-green-600 active:scale-95"
+      >
+        + Increment
+      </button>
+
+      <button
+        (click)="cntSignal.update((v) => v - 1)"
+        class="rounded-xl bg-red-500 px-5 py-3 font-semibold text-white shadow-sm transition hover:bg-red-600 active:scale-95"
+      >
+        − Decrement
+      </button>
+
+    </div> -->
+
+    <div class="mt-4 grid grid-cols-2 gap-3">
+      <button
+        (click)="handleChange('inc')"
+        class="rounded-xl bg-green-500 px-5 py-3 font-semibold text-white shadow-sm transition hover:bg-green-600 active:scale-95"
+      >
+        + Increment
+      </button>
+
+      <button
+        (click)="handleChange('dec')"
+        class="rounded-xl bg-red-500 px-5 py-3 font-semibold text-white shadow-sm transition hover:bg-red-600 active:scale-95"
+      >
+        − Decrement
+      </button>
+    </div>
+
+    <!-- Signal syntax -->
+    <div class="mt-8 rounded-xl bg-gray-900 p-4 text-left">
+      <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-400">
+        Signal syntax - check console
+      </p>
+
+      <code class="text-sm text-green-400"> cntSignal() </code>
+    </div>
+  </div>
+</div>

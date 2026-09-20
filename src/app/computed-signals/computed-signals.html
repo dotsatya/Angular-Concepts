@@ -1,0 +1,78 @@
+<div class="min-h-screen bg-gray-100 px-4 py-10">
+  <div class="mx-auto max-w-md space-y-6">
+    <!-- Computed Signals Card -->
+    <div class="rounded-3xl bg-white p-8 text-center shadow-xl">
+      <!-- Header -->
+      <h1 class="text-3xl font-bold text-gray-800">Computed Signals</h1>
+
+      <p class="mt-2 text-sm text-gray-500">Understanding derived values with Angular Signals</p>
+
+      <!-- Computed Value -->
+      <div class="mt-8 rounded-2xl bg-purple-50 p-5">
+        <p class="text-sm font-medium text-gray-500">Computed Value of Z</p>
+
+        <p class="mt-1 text-4xl font-bold text-purple-600">
+          {{ z() }}
+        </p>
+      </div>
+
+      <!-- Relationship -->
+      <div class="mt-6 rounded-xl bg-gray-900 p-4">
+        <p class="text-sm text-gray-400">Z is calculated from X and Y</p>
+
+        <p class="mt-2 font-mono text-sm text-green-400">z = computed(() => ...)</p>
+      </div>
+
+      <!-- Buttons -->
+      <div class="mt-6 grid grid-cols-1 gap-3">
+        <button
+          (click)="showValue()"
+          class="rounded-xl bg-gray-800 px-5 py-3 font-semibold text-white transition duration-200 hover:bg-gray-700 active:scale-95"
+        >
+          Show Value of Z
+        </button>
+
+        <button
+          (click)="updateValue()"
+          class="rounded-xl bg-blue-500 px-5 py-3 font-semibold text-white transition duration-200 hover:bg-blue-600 active:scale-95"
+        >
+          Update X (+14)
+        </button>
+      </div>
+    </div>
+
+    <!-- Effect / Counter Card -->
+    <div class="rounded-3xl bg-white p-8 text-center shadow-xl">
+      <h2 class="text-2xl font-bold text-gray-800">Effect Example</h2>
+
+      <p class="mt-2 text-sm text-gray-500">The box appears when the counter reaches 2</p>
+
+      <!-- Counter -->
+      <div class="mt-6 rounded-2xl bg-gray-50 p-6">
+        <p class="text-sm font-medium text-gray-500">Counter</p>
+
+        <p class="mt-2 text-5xl font-bold text-gray-800">
+          {{ cnt() }}
+        </p>
+
+        <button
+          (click)="increase()"
+          class="mt-5 rounded-xl bg-indigo-500 px-6 py-3 font-semibold text-white transition duration-200 hover:bg-indigo-600 active:scale-95"
+        >
+          Increase
+        </button>
+      </div>
+
+      <!-- Effect Result -->
+      <div class="mt-6 flex h-24 items-center justify-center">
+        @if (show()) {
+          <div class="flex h-20 w-20 items-center justify-center rounded-2xl bg-red-200 shadow-md">
+            <span class="text-sm font-bold text-red-700"> Show </span>
+          </div>
+        } @else {
+          <p class="text-sm text-gray-400">Waiting for counter = 2...</p>
+        }
+      </div>
+    </div>
+  </div>
+</div>

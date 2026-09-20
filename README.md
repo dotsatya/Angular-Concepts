@@ -1,59 +1,138 @@
-# Test
+# Angular Concepts ⚡
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.8.
+Angular Concepts is a personal learning and practice repository containing hands-on Angular examples. Each example is implemented as a small, focused component so that one Angular concept can be explored without the complexity of a large application.
 
-## Development server
+## 📚 Topics Covered
 
-To start a local development server, run:
+### 🧱 Angular Fundamentals
+
+- Standalone components
+- Interpolation
+- Event handling and event objects
+- Conditional rendering with `@if`, `@else`, and `@switch`
+- List rendering with `@for` and `@empty`
+- Basic data binding
+- Template reference variables
+
+### ⚙️ Signals
+
+- `signal()`
+- Writable signals with `.set()` and `.update()`
+- `computed()`
+- `effect()`
+- Signals compared with regular component properties
+
+### 🎨 Styling
+
+- Tailwind CSS utility classes
+- Responsive layouts and utility-based styling
+- Dynamic content presentation
+
+> 📝 Forms, services, routing, HTTP, and RxJS are planned topics and are not currently marked as implemented.
+
+## 🗂️ Project Structure
+
+```text
+src/
+└── app/
+	├── addition-component/
+	├── computed-signals/
+	├── counter/
+	├── event-component/
+	├── if-else-component/
+	├── loop-component/
+	├── signal-component/
+	├── app.html
+	├── app.ts
+	└── ...
+```
+
+Each folder contains a focused example for a particular Angular concept, including its component class, template, styles, and tests where applicable.
+
+## 🧪 Examples
+
+| Example | Concept | Description |
+| --- | --- | --- |
+| ➕ `addition-component` | Event handling and input events | Reads two numbers and displays their sum. |
+| 🔢 `computed-signals` | `computed()` and `effect()` | Derives a value from signals and reacts to signal changes. |
+| 🔁 `counter` | Component methods and events | Implements increment, reset, and decrement actions. |
+| 🖱️ `event-component` | Event handling | Inspects click and input events from the template. |
+| 🎨 `if-else-component` | Conditional rendering | Selects a color and renders the matching result. |
+| 🔄 `loop-component` | `@for` control flow | Renders a student list and removes individual entries. |
+| 📡 `signal-component` | Writable signals | Compares signal updates with updates to a regular property. |
+
+## 📈 Learning Progress
+
+- [x] Components
+- [x] Interpolation and basic data binding
+- [x] Event handling
+- [x] Signals
+- [x] Computed signals
+- [x] Effects
+- [x] Conditional rendering
+- [x] Loops
+- [x] Tailwind CSS styling
+- [ ] Forms
+- [ ] Services
+- [ ] Dependency Injection
+- [ ] Routing
+- [ ] HTTP / API integration
+- [ ] RxJS
+- [ ] Advanced Angular concepts
+
+## 🛠️ Tech Stack
+
+- Angular
+- TypeScript
+- HTML
+- CSS
+- Tailwind CSS
+- Angular Signals
+- Git and GitHub
+
+## 🚀 How to Run
+
+Install the project dependencies:
+
+```bash
+npm install
+```
+
+Start the Angular development server:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Then open `http://localhost:4200/` in a browser. The application reloads automatically when source files change.
 
-## Code scaffolding
+## 🧭 How This Repository Is Organized
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Each Angular concept is kept in its own component and folder.
+- Examples are intentionally small so individual concepts are easy to read and understand.
+- New concepts can be added as focused components without restructuring the entire project.
 
-```bash
-ng generate component component-name
-```
+## 🔮 Future Concepts
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+The following topics may be added as the repository grows:
 
-```bash
-ng generate --help
-```
+- Forms and form validation
+- Services
+- Dependency Injection
+- Routing
+- HTTP Client and APIs
+- RxJS and Observables
+- Lifecycle hooks
+- Directives
+- Pipes
+- Component communication
+- `@Input` and `@Output`
+- `ViewChild`
+- Content projection
+- Angular Material
+- Authentication
+- State management
 
-## Building
+## 🎯 Goal
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+The goal of this repository is to build practical Angular understanding by implementing concepts individually, learning from small experiments, and gradually progressing toward larger applications.

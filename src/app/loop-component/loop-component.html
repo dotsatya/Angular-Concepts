@@ -1,0 +1,66 @@
+<div class="min-h-screen bg-gray-100 px-4 py-10">
+  <div class="mx-auto max-w-2xl rounded-3xl bg-white p-8 shadow-xl">
+    <!-- Header -->
+    <div class="mb-8 text-center">
+      <h1 class="text-3xl font-bold text-gray-800">Loop Component</h1>
+
+      <p class="mt-2 text-gray-500">Angular @ for control flow</p>
+    </div>
+
+    <!-- Users -->
+    <!-- <div class="mb-8">
+
+      <h2 class="mb-4 text-xl font-bold text-gray-800">
+        Users
+      </h2>
+
+      <div class="space-y-2">
+
+        @for (user of users; track user) {
+          <div
+            class="rounded-xl bg-blue-50 px-4 py-3 font-medium text-blue-700"
+          >
+            {{ user }}
+          </div>
+        }
+
+      </div>
+
+    </div> -->
+
+    <!-- Students -->
+    <div>
+      <h2 class="mb-4 text-xl font-bold text-gray-800">Students</h2>
+
+      <div class="space-y-3">
+        @for (student of students; track student.id) {
+          <div
+            class="flex items-center justify-between rounded-xl border border-gray-200 bg-gray-50 p-4 transition hover:shadow-md"
+          >
+            <div>
+              <p class="font-semibold text-gray-800">
+                {{ student.name }}
+              </p>
+
+              <p class="text-sm text-gray-500">Age: {{ student.age }}</p>
+            </div>
+
+            <button
+              (click)="handleDelete(student.id)"
+              class="rounded-lg bg-red-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-red-600 active:scale-95"
+            >
+              Delete
+            </button>
+          </div>
+
+        } @empty {
+          <div
+            class="rounded-xl border-2 border-dashed border-gray-300 p-8 text-center text-gray-400"
+          >
+            No students found.
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>
