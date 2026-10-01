@@ -7,6 +7,10 @@ import { IfElseComponent } from './if-else-component/if-else-component';
 import { SignalComponent } from './signal-component/signal-component';
 import { LoopComponent } from './loop-component/loop-component';
 import { ComputedSignals } from './computed-signals/computed-signals';
+import { DynamicStyling } from './dynamic-styling/dynamic-styling';
+import { NgforComponent } from './directive-concepts/ngfor-component/ngfor-component';
+import { NgifComponent } from './directive-concepts/ngif-component/ngif-component';
+import { NgswitchComponent } from './directive-concepts/ngswitch-component/ngswitch-component';
 
 @Component({
   imports: [
@@ -17,7 +21,12 @@ import { ComputedSignals } from './computed-signals/computed-signals';
     IfElseComponent,
     SignalComponent,
     LoopComponent,
-    ComputedSignals
+    ComputedSignals,
+    DynamicStyling,
+
+    NgforComponent,
+    NgifComponent,
+    NgswitchComponent,
   ],
   selector: 'app-root',
   styleUrl: './app.css',

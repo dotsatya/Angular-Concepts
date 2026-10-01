@@ -1,1 +1,103 @@
-<p>dynamic-styling works!</p>
+<div class="min-h-screen bg-slate-100 flex items-center justify-center p-6">
+  <div class="w-full max-w-md rounded-3xl bg-white p-8 shadow-xl">
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <div
+        class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-900 text-2xl text-white shadow-lg"
+      >
+        ↕
+      </div>
+
+      <h1 class="text-3xl font-bold text-slate-800">Dynamic Height</h1>
+
+      <p class="mt-2 text-sm text-slate-500">Control the height of the box dynamically</p>
+    </div>
+
+    <!-- Input -->
+    <div class="mb-6">
+      <label for="heightInput" class="mb-2 block text-sm font-semibold text-slate-700">
+        Enter Height
+      </label>
+
+      <div class="flex gap-3">
+        <input
+          id="heightInput"
+          type="number"
+          [(ngModel)]="userHeight"
+          min="1"
+          placeholder="Enter height..."
+          class="w-full rounded-xl border-2 border-slate-200 bg-slate-50 px-4 py-3 text-slate-800 outline-none transition focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-100"
+        />
+
+        <button
+          (click)="setHeight()"
+          class="rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white shadow-md transition hover:bg-blue-700 hover:shadow-lg active:scale-95"
+        >
+          Set
+        </button>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="mb-8 grid grid-cols-2 gap-3">
+      <button
+        (click)="increaseHeight()"
+        class="rounded-xl border-2 border-slate-200 bg-white px-4 py-3 font-semibold text-slate-700 transition hover:border-green-400 hover:bg-green-50 hover:text-green-700 active:scale-95"
+      >
+        <span class="text-lg">＋</span>
+        Increase
+      </button>
+
+      <button
+        (click)="decreaseHeight()"
+        class="rounded-xl border-2 border-slate-200 bg-white px-4 py-3 font-semibold text-slate-700 transition hover:border-red-400 hover:bg-red-50 hover:text-red-700 active:scale-95"
+      >
+        <span class="text-lg">−</span>
+        Decrease
+      </button>
+    </div>
+
+    <!-- Current Height -->
+    <div class="mb-4 flex items-center justify-between">
+      <span class="text-sm font-medium text-slate-500"> Current Height </span>
+
+      <span
+        class="rounded-full px-3 py-1 text-sm font-bold"
+        [class]="height > 100 ? 'bg-red-100 text-red-600' : 'bg-green-100 text-green-600'"
+      >
+        {{ height }} px
+      </span>
+    </div>
+
+    <!-- Dynamic Box -->
+    <div
+      class="relative flex w-full items-center justify-center overflow-hidden rounded-2xl border-2 border-dashed  transition-all duration-300"
+      [style.height.px]="height"
+      [class]="height > 100 ? 'bg-red-200 border-red-300' : 'bg-green-100 border-green-300'"
+    >
+      <span
+        class="absolute text-sm font-bold"
+        [class]="height > 100 ? 'text-red-600' : 'text-green-600'"
+      >
+        {{ height }}px
+      </span>
+    </div>
+
+    <!-- Status -->
+    <div class="mt-5 text-center text-sm text-slate-500">
+      <!-- <span *ngIf="height > 100">
+        🔴 Height is greater than 100px
+      </span>
+
+      <span *ngIf="height <= 100">
+        🟢 Height is within the normal range
+      </span> -->
+      <!-- //new syntax  -->
+      @if (height > 100) {
+        <p>🔴 Height is greater than 100px</p>
+      } @else {
+        <p>🟢 Height is within the normal range</p>
+      }
+    </div>
+  </div>
+</div>

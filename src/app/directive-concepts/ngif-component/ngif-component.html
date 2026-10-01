@@ -1,0 +1,108 @@
+<div class="min-h-screen bg-slate-100 p-6">
+  <div class="mx-auto max-w-2xl">
+    <!-- Header -->
+    <div class="mb-8 text-center">
+      <div
+        class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-900 text-3xl text-white shadow-lg"
+      >
+        👁
+      </div>
+
+      <h1 class="text-3xl font-bold text-slate-800">*ngIf Practice</h1>
+
+      <p class="mt-2 text-slate-500">Learn how Angular conditionally displays elements</p>
+    </div>
+
+    <!-- Control Card -->
+    <div class="rounded-2xl bg-white p-6 shadow-lg">
+      <div class="mb-6 flex items-center justify-between">
+        <div>
+          <h2 class="text-lg font-bold text-slate-800">Display Control</h2>
+
+          <p class="text-sm text-slate-500">Current value of <code>show</code></p>
+        </div>
+
+        <!-- Status -->
+        <span
+          class="rounded-full px-3 py-1 text-sm font-semibold"
+          [class.bg-green-100]="show"
+          [class.text-green-700]="show"
+          [class.bg-red-100]="!show"
+          [class.text-red-700]="!show"
+        >
+          {{ show ? 'true' : 'false' }}
+        </span>
+      </div>
+
+      <!-- Button -->
+      <button
+        (click)="show = !show"
+        class="w-full rounded-xl bg-blue-600 px-5 py-3 font-semibold text-white shadow-md transition hover:bg-blue-700 hover:shadow-lg active:scale-[0.98]"
+      >
+        {{ show ? 'Hide Content' : 'Show Content' }}
+      </button>
+
+      <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+
+      <!-- //for if Else
+      @if (show) {
+        <h3 class="text-xl font-bold text-green-700">Content is Visible</h3>
+      } @else {
+        <h3 class="text-xl font-bold text-red-700">Content is Hidden</h3>
+      } -->
+
+      <!-- ngIf  ||| // // // *ngIf="show" // // // -->
+      <div
+        *ngIf="show"
+        class="mt-6 rounded-xl border border-green-200 bg-green-50 p-6 text-center shadow-sm"
+      >
+        <div class="mb-3 text-4xl">✅</div>
+
+        <h3 class="text-xl font-bold text-green-700">Content is Visible</h3>
+
+        <p class="mt-2 text-sm text-green-600">
+          This element exists because
+          <code>show</code> is <strong>true</strong>.
+        </p>
+      </div>
+
+      <!-- ngIf else ||| // // // *ngIf="!show" // // // -->
+      <div
+        *ngIf="!show"
+        class="mt-6 rounded-xl border border-red-200 bg-red-50 p-6 text-center shadow-sm"
+      >
+        <div class="mb-3 text-4xl">🚫</div>
+
+        <h3 class="text-xl font-bold text-red-700">Content is Hidden</h3>
+
+        <p class="mt-2 text-sm text-red-600">
+          The content is hidden because
+          <code>show</code> is <strong>false</strong>.
+        </p>
+      </div>
+    </div>
+
+    <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+
+    <!-- Concept Explanation -->
+    <div class="mt-6 rounded-2xl bg-slate-900 p-6 text-white shadow-lg">
+      <h2 class="mb-4 text-lg font-bold">How *ngIf works</h2>
+
+      <div class="space-y-3 text-sm text-slate-300">
+        <p>
+          <code class="text-blue-300">show = true</code>
+          → Angular displays the element.
+        </p>
+
+        <p>
+          <code class="text-blue-300">show = false</code>
+          → Angular removes the element from the DOM.
+        </p>
+
+        <p>Clicking the button changes:</p>
+
+        <div class="rounded-lg bg-slate-800 p-3 font-mono text-sm">show = !show</div>
+      </div>
+    </div>
+  </div>
+</div>

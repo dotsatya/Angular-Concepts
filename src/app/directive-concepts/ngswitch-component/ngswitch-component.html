@@ -1,0 +1,204 @@
+<div class="min-h-screen bg-slate-100 p-6">
+  <div class="mx-auto max-w-2xl">
+    <!-- Header -->
+    <div class="mb-8 text-center">
+      <h1 class="text-3xl font-bold text-slate-800">NgSwitch Practice</h1>
+
+      <p class="mt-2 text-sm text-slate-500">
+        Practice conditional rendering using Angular's switch directive
+      </p>
+    </div>
+
+    <!-- Main Card -->
+    <div class="rounded-3xl bg-white p-6 shadow-xl">
+      <!-- Input Section -->
+      <div class="mb-7">
+        <label for="age" class="mb-2 block text-sm font-semibold text-slate-700">
+          Enter Your Age
+        </label>
+
+        <div class="flex gap-3">
+          <input
+            id="age"
+            type="number"
+            [(ngModel)]="setAge"
+            placeholder="Enter age..."
+            min="1"
+            class="w-full rounded-xl border-2 border-slate-200 bg-slate-50 px-4 py-3 text-slate-800 outline-none transition focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-100"
+          />
+
+          <button
+            (click)="handleSetAge()"
+            class="rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white shadow-md transition hover:bg-blue-700 hover:shadow-lg active:scale-95"
+          >
+            Set
+          </button>
+        </div>
+      </div>
+
+      <!-- Current Age -->
+      <div
+        class="mb-6 flex items-center justify-between rounded-xl border border-slate-200 bg-slate-50 px-4 py-3"
+      >
+        <span class="text-sm font-medium text-slate-500"> Current Age </span>
+
+        <span class="rounded-full bg-blue-100 px-4 py-1 text-sm font-bold text-blue-700">
+          {{ age }}
+        </span>
+      </div>
+
+      <!-- Quick Age Buttons -->
+      <div class="mb-8">
+        <p class="mb-3 text-sm font-semibold text-slate-700">Quick Select</p>
+
+        <div class="grid grid-cols-4 gap-2">
+          <button
+            (click)="age = 18"
+            class="rounded-xl border-2 border-slate-200 bg-white py-2.5 font-semibold text-slate-700 transition hover:border-blue-400 hover:bg-blue-50 hover:text-blue-700 active:scale-95"
+          >
+            18
+          </button>
+
+          <button
+            (click)="age = 25"
+            class="rounded-xl border-2 border-slate-200 bg-white py-2.5 font-semibold text-slate-700 transition hover:border-blue-400 hover:bg-blue-50 hover:text-blue-700 active:scale-95"
+          >
+            25
+          </button>
+
+          <button
+            (click)="age = 35"
+            class="rounded-xl border-2 border-slate-200 bg-white py-2.5 font-semibold text-slate-700 transition hover:border-blue-400 hover:bg-blue-50 hover:text-blue-700 active:scale-95"
+          >
+            35
+          </button>
+
+          <button
+            (click)="age = 45"
+            class="rounded-xl border-2 border-slate-200 bg-white py-2.5 font-semibold text-slate-700 transition hover:border-blue-400 hover:bg-blue-50 hover:text-blue-700 active:scale-95"
+          >
+            45
+          </button>
+        </div>
+      </div>
+
+      <!-- Switch Result -->
+      <div>
+        <div class="mb-3 flex items-center justify-between">
+          <h2 class="text-lg font-bold text-slate-800">Result</h2>
+
+          <span class="text-xs font-mono text-slate-400"> [ngSwitch]="age" </span>
+        </div>
+
+        <div class="overflow-hidden rounded-2xl border-2 border-slate-200">
+          <!-- ////////////////////////////////////////////////////////////////////// -->
+          <!-- // // // normal switch <case></case> -->
+          <!-- <div>
+            @switch (age) {
+              @case (18) {
+                <div>You are 18 years old</div>
+              }
+
+              @case (25) {
+                <div>You are 25 years old</div>
+              }
+
+              @case (35) {
+                <div>You are 35 years old</div>
+              }
+
+              @case (45) {
+                <div>You are 45 years old</div>
+              }
+
+              @default {
+                <div>Invalid age</div>
+              }
+            }
+          </div> -->
+
+          <!-- ////////////////////////////////////////////////////////////////////// -->
+          <!-- Switch -->
+          <div [ngSwitch]="age">
+            <!-- Case 18 -->
+            <div *ngSwitchCase="18" class="bg-green-50 p-8 text-center">
+              <div class="mb-3 text-4xl">🎓</div>
+
+              <h3 class="text-xl font-bold text-green-700">You are 18 years old</h3>
+
+              <p class="mt-2 text-sm text-green-600">
+                This content is displayed by
+                <code>*ngSwitchCase="18"</code>
+              </p>
+            </div>
+
+            <!-- Case 25 -->
+            <div *ngSwitchCase="25" class="bg-blue-50 p-8 text-center">
+              <div class="mb-3 text-4xl">💻</div>
+
+              <h3 class="text-xl font-bold text-blue-700">You are 25 years old</h3>
+
+              <p class="mt-2 text-sm text-blue-600">
+                This content is displayed by
+                <code>*ngSwitchCase="25"</code>
+              </p>
+            </div>
+
+            <!-- Case 35 -->
+            <div *ngSwitchCase="35" class="bg-purple-50 p-8 text-center">
+              <div class="mb-3 text-4xl">🚀</div>
+
+              <h3 class="text-xl font-bold text-purple-700">You are 35 years old</h3>
+
+              <p class="mt-2 text-sm text-purple-600">
+                This content is displayed by
+                <code>*ngSwitchCase="35"</code>
+              </p>
+            </div>
+
+            <!-- Case 45 -->
+            <div *ngSwitchCase="45" class="bg-orange-50 p-8 text-center">
+              <div class="mb-3 text-4xl">⭐</div>
+
+              <h3 class="text-xl font-bold text-orange-700">You are 45 years old</h3>
+
+              <p class="mt-2 text-sm text-orange-600">
+                This content is displayed by
+                <code>*ngSwitchCase="45"</code>
+              </p>
+            </div>
+
+            <!-- Default -->
+            <div *ngSwitchDefault class="bg-red-50 p-8 text-center">
+              <div class="mb-3 text-4xl">❌</div>
+
+              <h3 class="text-xl font-bold text-red-700">Invalid age</h3>
+
+              <p class="mt-2 text-sm text-red-600">No matching switch case was found.</p>
+            </div>
+          </div>
+          <!-- ////////////////////////////////////////////////////////////////////////// -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Explanation -->
+    <div class="mt-6 rounded-2xl bg-slate-900 p-6 text-white shadow-lg">
+      <h2 class="mb-4 text-lg font-bold">How it works</h2>
+
+      <div class="space-y-3 text-sm text-slate-300">
+        <div class="rounded-lg bg-slate-800 p-3 font-mono">[ngSwitch]="age"</div>
+
+        <p>Angular checks the value of <code>age</code>.</p>
+
+        <div class="rounded-lg bg-slate-800 p-3 font-mono">*ngSwitchCase="18"</div>
+
+        <p>If the value matches 18, that case is displayed.</p>
+
+        <div class="rounded-lg bg-slate-800 p-3 font-mono">*ngSwitchDefault</div>
+
+        <p>If no case matches, the default content is displayed.</p>
+      </div>
+    </div>
+  </div>
+</div>
