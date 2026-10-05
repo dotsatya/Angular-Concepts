@@ -11,6 +11,7 @@ import { DynamicStyling } from './dynamic-styling/dynamic-styling';
 import { NgforComponent } from './directive-concepts/ngfor-component/ngfor-component';
 import { NgifComponent } from './directive-concepts/ngif-component/ngif-component';
 import { NgswitchComponent } from './directive-concepts/ngswitch-component/ngswitch-component';
+import { Pipes } from './pipes/pipes/pipes';
 
 @Component({
   imports: [
@@ -27,6 +28,8 @@ import { NgswitchComponent } from './directive-concepts/ngswitch-component/ngswi
     NgforComponent,
     NgifComponent,
     NgswitchComponent,
+
+    Pipes
   ],
   selector: 'app-root',
   styleUrl: './app.css',

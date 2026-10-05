@@ -1,0 +1,118 @@
+<!-- ==================== STRING PIPES ==================== -->
+
+<h2
+  class="mb-4 mt-6 border-b-2 border-amber-700 pb-2 text-2xl font-bold uppercase tracking-wide text-amber-900"
+>
+  String Pipes
+</h2>
+
+<h1 class="text-lg font-semibold">Input Name: {{ name }}</h1>
+
+<p>1. lowercase => {{ name | lowercase }}</p>
+<!-- Answer: satya sundar dey -->
+
+<p>2. titlecase => {{ name | titlecase }}</p>
+<!-- Answer: Satya Sundar Dey -->
+
+<p>3. uppercase => {{ name | uppercase }}</p>
+<!-- Answer: SATYA SUNDAR DEY -->
+
+<p>4. json => {{ name | json }}</p>
+<!-- Answer: "satya sundar dey" -->
+
+<p>5. slice:3 => {{ name | slice: 3 }}</p>
+<!-- Answer: ya sundar dey -->
+
+<p>6. slice:3:5 => {{ name | slice: 3 : 5 }}</p>
+<!-- Answer: ya -->
+
+<!-- ==================== DATE PIPES ==================== -->
+
+<h2
+  class="mb-4 mt-6 border-b-2 border-amber-700 pb-2 text-2xl font-bold uppercase tracking-wide text-amber-900"
+>
+  Date Pipes
+</h2>
+
+<h1 class="text-lg font-semibold">Input Date: {{ date }}</h1>
+
+<p>1. date => {{ date | date }}</p>
+<!-- Answer: Oct 6, 2026 -->
+
+<p>2. date:'short' => {{ date | date: 'short' }}</p>
+<!-- Answer: 10/6/26, 12:00 AM -->
+
+<p>3. date:'shortDate' => {{ date | date: 'shortDate' }}</p>
+<!-- Answer: 10/6/26 -->
+
+<p>4. date:'shortTime' => {{ date | date: 'shortTime' }}</p>
+<!-- Answer: 12:00 AM -->
+
+<p>5. date:'medium' => {{ date | date: 'medium' }}</p>
+<!-- Answer: Oct 6, 2026, 12:00:00 AM -->
+
+<p>6. date:'mediumDate' => {{ date | date: 'mediumDate' }}</p>
+<!-- Answer: Oct 6, 2026 -->
+
+<p>7. date:'mediumTime' => {{ date | date: 'mediumTime' }}</p>
+<!-- Answer: 12:00:00 AM -->
+
+<p>8. date:'long' => {{ date | date: 'long' }}</p>
+<!-- Answer: October 6, 2026 at 12:00:00 AM GMT+5:30 -->
+
+<p>9. date:'longDate' => {{ date | date: 'longDate' }}</p>
+<!-- Answer: October 6, 2026 -->
+
+<p>10. date:'longTime' => {{ date | date: 'longTime' }}</p>
+<!-- Answer: 12:00:00 AM GMT+5:30 -->
+
+<p>11. date:'fullDate' => {{ date | date: 'fullDate' }}</p>
+<!-- Answer: Tuesday, October 6, 2026 -->
+
+<p>12. date:'fullTime' => {{ date | date: 'fullTime' }}</p>
+<!-- Answer: 12:00:00 AM GMT+05:30 -->
+
+<p>13. date:'hh:mm:ss' => {{ date | date: 'hh:mm:ss' }}</p>
+<!-- Answer: 12:00:00 -->
+
+<!-- ==================== CURRENCY PIPES ==================== -->
+
+<h2
+  class="mb-4 mt-6 border-b-2 border-amber-700 pb-2 text-2xl font-bold uppercase tracking-wide text-amber-900"
+>
+  Currency Pipes
+</h2>
+
+<h1 class="text-lg font-semibold">Input Money: {{ money }}</h1>
+
+<p>1. currency - INR => {{ money | currency: 'INR' }}</p>
+<!-- Answer: ₹1,000.00 -->
+
+<p>2. currency - USD => {{ money | currency: 'USD' }}</p>
+<!-- Answer: $1,000.00 -->
+
+<p>3. currency:'symbol' => {{ money | currency: 'INR' : 'symbol' }}</p>
+<!-- Answer: ₹1,000.00 -->
+
+<p>4. currency:'code' => {{ money | currency: 'INR' : 'code' }}</p>
+<!-- Answer: INR 1,000.00 -->
+
+<p>
+  5. currency:'symbol' + digitsInfo =>
+  {{ money | currency: 'INR' : 'symbol' : '1.0-0' }}
+</p>
+<!-- Answer: ₹1,000 -->
+
+<!-- ==================== MULTIPLE PIPE COMBINATION ==================== -->
+
+<h2
+  class="mb-4 mt-6 border-b-2 border-amber-700 pb-2 text-2xl font-bold uppercase tracking-wide text-amber-900"
+>
+  Pipe Combination
+</h2>
+
+<p>
+  1. date:'fullDate' | uppercase =>
+  {{ date | date: 'fullDate' | uppercase }}
+</p>
+<!-- Answer: TUESDAY, OCTOBER 6, 2026 -->
