@@ -12,6 +12,7 @@ import { NgforComponent } from './directive-concepts/ngfor-component/ngfor-compo
 import { NgifComponent } from './directive-concepts/ngif-component/ngif-component';
 import { NgswitchComponent } from './directive-concepts/ngswitch-component/ngswitch-component';
 import { Pipes } from './pipes/pipes/pipes';
+import { CustomPipes } from './pipes/custom-pipes/custom-pipes';
 
 @Component({
   imports: [
@@ -29,7 +30,8 @@ import { Pipes } from './pipes/pipes/pipes';
     NgifComponent,
     NgswitchComponent,
 
-    Pipes
+    Pipes,
+    CustomPipes
   ],
   selector: 'app-root',
   styleUrl: './app.css',
